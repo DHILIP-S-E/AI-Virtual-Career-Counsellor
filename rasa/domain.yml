@@ -1,0 +1,220 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thank
+  - affirm
+  - deny
+  - tech_interest
+  - creative_mind
+  - dream_job
+  - confused_state
+  - goal_oriented
+  - ask_career_details
+  - ask_roadmap
+  - ask_salary
+  - ask_skills
+  - ask_education
+  - ask_about_quiz
+  - ask_about_tracker
+  - ask_about_voice
+  - ask_about_resume
+  - provide_name
+  - provide_interest
+  - provide_experience
+  - provide_education
+  - provide_skills
+  - provide_goals
+  - provide_personality
+  - provide_feedback
+  - restart
+
+entities:
+  - career
+  - skill
+  - field
+  - name
+  - education_level
+  - experience_years
+  - interest
+
+slots:
+  user_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: name
+  
+  interests:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: interest
+  
+  selected_career:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: career
+  
+  sentiment:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+  
+  education_level:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: education_level
+  
+  experience_years:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: experience_years
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm your AI Career Counselor. I'm here to help you discover career paths that match your interests and strengths. What's your name?"
+    - text: "Hi there! I'm an AI Career Counselor designed to help you explore potential career paths. May I know your name?"
+    - text: "Welcome to AI Career Counselor! I'm here to guide you toward finding fulfilling career options. What should I call you?"
+
+  utter_greet_with_name:
+    - text: "Great to meet you, {user_name}! Tell me about your interests or skills, and I'll help you discover potential career paths."
+    - text: "Hello {user_name}! I'd love to learn more about your interests and passions to suggest career options that might be a good fit for you."
+    - text: "Nice to meet you, {user_name}! What kinds of activities or subjects are you passionate about? This will help me suggest relevant career paths."
+
+  utter_goodbye:
+    - text: "Goodbye! Feel free to come back anytime you need career guidance."
+    - text: "Take care! Remember, finding the right career is a journey, not a destination."
+    - text: "Wishing you success in your career journey! Come back anytime for more guidance."
+
+  utter_thank:
+    - text: "You're welcome! I'm happy to help with your career exploration."
+    - text: "My pleasure! That's what I'm here for."
+    - text: "Glad I could assist you in your career journey!"
+
+  utter_ask_interests:
+    - text: "What subjects or activities are you most passionate about?"
+    - text: "Tell me about your interests or skills that you enjoy using."
+    - text: "What kinds of work or activities do you find most engaging or fulfilling?"
+
+  utter_tech_interest_response:
+    - text: "Your interest in technology is clear! Based on what you've shared, you might excel in careers like Software Development, Data Science, or Cybersecurity. Would you like to learn more about any of these paths?"
+    - text: "I can see you have a passion for technology! Careers like Software Engineering, Data Analysis, or IT Management could be great fits for your interests. Would you like more details about these options?"
+    - text: "With your technology interests, you might thrive in fields like Software Development, Network Administration, or AI Research. Would you like me to tell you more about these career paths?"
+
+  utter_creative_mind_response:
+    - text: "You have a creative spirit! Based on your interests, careers like UX Design, Graphic Design, or Content Creation could be excellent matches. Would you like to explore any of these options further?"
+    - text: "Your creative talents could shine in careers like Digital Design, Art Direction, or Media Production. Would you like to learn more about these creative career paths?"
+    - text: "With your creative mindset, you might excel in fields like User Experience Design, Visual Communication, or Creative Direction. Would you like more information about these careers?"
+
+  utter_business_interest_response:
+    - text: "Your business acumen is evident! Careers like Product Management, Digital Marketing, or Financial Analysis could be great matches for your interests. Would you like to learn more about any of these paths?"
+    - text: "With your interest in business, you might thrive in roles like Business Development, Marketing Strategy, or Management Consulting. Would you like more details about these career options?"
+    - text: "Your business focus could lead to successful careers in fields like Product Management, Market Research, or Business Analytics. Would you like to explore these options further?"
+
+  utter_healthcare_interest_response:
+    - text: "Your interest in healthcare is clear! Careers like Healthcare Administration, Medical Research, or Health Informatics might be excellent fits. Would you like to learn more about these paths?"
+    - text: "With your passion for healthcare, you might excel in fields like Healthcare Management, Public Health, or Medical Technology. Would you like more information about these career options?"
+    - text: "Your healthcare interests could lead to fulfilling careers in areas like Health Administration, Medical Research, or Healthcare Technology. Would you like to explore any of these further?"
+
+  utter_education_interest_response:
+    - text: "Your passion for education is evident! Careers like Instructional Design, Educational Technology, or Curriculum Development could be great matches. Would you like to learn more about these paths?"
+    - text: "With your interest in education, you might thrive in roles like E-Learning Development, Educational Administration, or Academic Advising. Would you like more details about these options?"
+    - text: "Your focus on education could lead to rewarding careers in fields like Instructional Technology, Education Policy, or Academic Program Management. Would you like to explore these further?"
+
+  utter_confused_state_response:
+    - text: "It's completely normal to feel uncertain about career choices. Let's break this down step by step. First, could you tell me about activities or subjects that you enjoy, even if they don't seem career-related?"
+    - text: "Many people feel confused when exploring career options, and that's okay. Let's start with what you know you enjoy doing or learning about. What activities make you lose track of time?"
+    - text: "Career exploration can definitely feel overwhelming. Let's simplify the process by focusing on your strengths and interests first. What kinds of tasks or activities do you find yourself naturally good at?"
+
+  utter_dream_job_response:
+    - text: "It's wonderful that you have a dream career in mind! To help you work toward that goal, could you tell me more about what specifically attracts you to this field?"
+    - text: "Having a dream job gives you a great north star to navigate toward. What aspects of this career are most appealing to you? This will help us create a roadmap to get there."
+    - text: "That's an exciting career aspiration! To help you achieve this dream, let's break down the skills and experiences you'll need. What do you already know about the requirements for this field?"
+
+  utter_goal_oriented_response:
+    - text: "I appreciate your focus on clear career goals. Let's create a structured plan to help you achieve them. First, could you share what specific milestones you hope to reach in the next 1-2 years?"
+    - text: "Having clear goals is a great advantage in career planning. To help you develop an effective roadmap, could you tell me about your current skills and what specific outcomes you're aiming for?"
+    - text: "Your goal-oriented approach will serve you well. Let's develop a strategic plan with concrete steps. What resources or skills do you already have that will help you move toward your career objectives?"
+
+  utter_ask_career_details:
+    - text: "I'd be happy to tell you more about {career}. This career typically involves {description}. The average salary is around ${salary}/year, and it requires skills like {skills}. Would you like to see a roadmap for this career?"
+    - text: "A career as a {career} involves {description}. Professionals in this field earn approximately ${salary} annually. Key skills include {skills}. Would you like to learn about the steps to enter this field?"
+    - text: "{career} is a rewarding field where you'll {description}. The typical salary range is around ${salary}/year. You'll need skills in {skills}. Would you like to see a detailed career path?"
+
+  utter_ask_roadmap:
+    - text: "Here's a roadmap for becoming a {career}: 1) {step1}, 2) {step2}, 3) {step3}, 4) {step4}, 5) {step5}. Would you like more details about any of these steps?"
+    - text: "The path to becoming a {career} typically involves: First, {step1}. Next, {step2}. Then, {step3}, followed by {step4}. Finally, {step5}. Which step would you like to explore further?"
+    - text: "To become a {career}, you'll want to follow these steps: Start with {step1}, then move on to {step2}. After that, focus on {step3}, followed by {step4}. Lastly, {step5}. Would you like more information about this journey?"
+
+  utter_ask_about_quiz:
+    - text: "The personality quiz helps identify career paths that match your unique traits and preferences. It takes about 5 minutes to complete and will give you personalized career recommendations. Would you like to take it now?"
+    - text: "Our career personality quiz analyzes your work style, problem-solving approach, and values to suggest careers that align with your natural strengths. It's quick and provides tailored recommendations. Interested in trying it?"
+    - text: "The personality assessment helps match your unique characteristics with suitable career paths. It evaluates factors like your preferred work environment and skill strengths. Would you like to start the quiz?"
+
+  utter_ask_about_tracker:
+    - text: "The weekly learning tracker helps you set and monitor goals related to your career development. You can create specific learning objectives, track your progress, and stay accountable. Would you like to set up your first goal?"
+    - text: "Our learning tracker feature allows you to set career development goals, monitor your progress, and maintain momentum in your professional growth. Would you like to learn how to use it?"
+    - text: "The weekly tracker is a tool to help you make consistent progress toward your career goals. You can set specific learning objectives, deadlines, and track your accomplishments. Would you like to create your first learning goal?"
+
+  utter_ask_about_voice:
+    - text: "The voice chat mode allows you to interact with me using speech instead of typing. It's convenient when you're multitasking or prefer speaking over typing. Would you like to try it out?"
+    - text: "Voice chat lets you speak directly to me instead of typing. It's a hands-free way to get career guidance and can feel more conversational. Would you like to activate voice mode?"
+    - text: "With voice chat, you can simply speak your questions or thoughts, and I'll respond accordingly. It's designed to make our interaction more natural and convenient. Would you like to switch to voice mode?"
+
+  utter_ask_about_resume:
+    - text: "The resume builder helps you create a professional resume tailored to your target career. It suggests relevant skills and formats your information according to industry standards. Would you like to start building your resume?"
+    - text: "Our resume builder tool helps you create a professional CV optimized for your desired career path. It includes keyword suggestions to help your resume pass through applicant tracking systems. Would you like to try it?"
+    - text: "The resume builder feature guides you through creating a professional resume targeted to your desired industry. It includes templates, keyword optimization, and formatting best practices. Would you like to get started?"
+
+  utter_default:
+    - text: "I'm not sure I understand. Could you rephrase that or tell me more about your career interests?"
+    - text: "I didn't quite catch that. Could you tell me more about what you're looking for in terms of career guidance?"
+    - text: "I'm still learning and didn't understand that completely. Could you share more about your career goals or interests?"
+
+  utter_ask_feedback:
+    - text: "How helpful was this career guidance session for you?"
+    - text: "Did you find the career recommendations useful? I'd appreciate your feedback to improve."
+    - text: "Was this conversation helpful in your career exploration? Any suggestions for how I could better assist you?"
+
+actions:
+  - utter_greet
+  - utter_greet_with_name
+  - utter_goodbye
+  - utter_thank
+  - utter_ask_interests
+  - utter_tech_interest_response
+  - utter_creative_mind_response
+  - utter_business_interest_response
+  - utter_healthcare_interest_response
+  - utter_education_interest_response
+  - utter_confused_state_response
+  - utter_dream_job_response
+  - utter_goal_oriented_response
+  - utter_ask_career_details
+  - utter_ask_roadmap
+  - utter_ask_about_quiz
+  - utter_ask_about_tracker
+  - utter_ask_about_voice
+  - utter_ask_about_resume
+  - utter_default
+  - utter_ask_feedback
+  - action_suggest_careers
+  - action_provide_career_details
+  - action_create_roadmap
+  - action_save_user_profile
+  - action_analyze_sentiment
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

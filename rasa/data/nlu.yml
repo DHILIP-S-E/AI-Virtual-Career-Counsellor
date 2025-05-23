@@ -1,0 +1,213 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - greetings
+    - howdy
+    - hi there
+    - what's up
+    - nice to meet you
+    - pleasure to meet you
+    - good to see you
+    - hi, how are you
+    - hello, how are you doing
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+    - see ya
+    - bye bye
+    - have a good day
+    - have a nice day
+    - talk to you later
+    - until next time
+    - farewell
+    - take care
+    - catch you later
+    - have a good one
+    - I'm leaving now
+    - I have to go
+
+- intent: thank
+  examples: |
+    - thanks
+    - thank you
+    - thanks a lot
+    - thank you very much
+    - I appreciate it
+    - thanks for your help
+    - that's helpful, thanks
+    - you've been very helpful
+    - that's great, thank you
+    - perfect, thanks
+    - thanks for the information
+    - that's exactly what I needed
+    - you're the best, thanks
+    - I appreciate your guidance
+    - thank you for your time
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - absolutely
+    - definitely
+    - yeah
+    - yep
+    - right
+    - that's right
+    - I agree
+    - sounds good
+    - that works
+    - perfect
+    - great
+    - ok
+    - okay
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - not interested
+    - I'll pass
+    - not now
+    - maybe later
+    - I'd rather not
+    - not at this time
+    - I don't want to
+    - no thanks
+    - negative
+
+- intent: tech_interest
+  examples: |
+    - I love programming
+    - I'm interested in software development
+    - I enjoy working with computers
+    - I like coding and building apps
+    - Technology fascinates me
+    - I'm good at solving technical problems
+    - I want to learn more about artificial intelligence
+    - I'm passionate about data science
+    - I've been learning Python
+    - I enjoy building websites
+    - I'm interested in cybersecurity
+    - I like working with databases
+    - I want to become a software engineer
+    - I'm curious about machine learning
+    - I enjoy troubleshooting technical issues
+    - I'm interested in cloud computing
+    - I like developing mobile applications
+    - I want to work with cutting-edge technology
+    - I'm fascinated by blockchain
+    - I enjoy system architecture and design
+
+- intent: creative_mind
+  examples: |
+    - I love designing things
+    - I'm passionate about art and creativity
+    - I enjoy visual storytelling
+    - I like creating beautiful user interfaces
+    - I'm interested in graphic design
+    - I love photography and visual arts
+    - I enjoy creating content
+    - I'm good at coming up with creative solutions
+    - I want to work in a creative field
+    - I like designing user experiences
+    - I'm passionate about animation
+    - I enjoy creative writing
+    - I want to become a UX designer
+    - I'm interested in digital media
+    - I like branding and visual identity
+    - I enjoy illustration and drawing
+    - I want to work in advertising
+    - I'm fascinated by interactive design
+    - I like creating videos and films
+    - I enjoy expressing myself through visual mediums
+
+- intent: dream_job
+  examples: |
+    - My dream job is to become a [software engineer](career)
+    - I've always wanted to be a [data scientist](career)
+    - My ideal career would be [UX designer](career)
+    - I dream of becoming a [product manager](career)
+    - I aspire to be a [cybersecurity analyst](career)
+    - My passion is to work as a [graphic designer](career)
+    - I've always dreamed of being a [digital marketer](career)
+    - My ultimate goal is to become a [financial analyst](career)
+    - I would love to be a [healthcare administrator](career)
+    - My dream is to work in [artificial intelligence](field)
+    - I've always been passionate about [web development](field)
+    - My ideal job would involve [creative design](field)
+    - I aspire to work in the [healthcare](field) industry
+    - I've always wanted a career in [education](field)
+    - My dream is to work with [technology](field)
+    - I'm passionate about having a career in [finance](field)
+    - I've always wanted to work in [marketing](field)
+
+- intent: confused_state
+  examples: |
+    - I'm not sure what career to pursue
+    - I feel lost about my career path
+    - I don't know what I want to do professionally
+    - I'm confused about which direction to take
+    - I need help figuring out my career options
+    - I'm uncertain about my professional future
+    - I don't know what jobs would suit me
+    - I'm struggling to find my career path
+    - I need guidance on choosing a career
+    - I'm at a crossroads in my professional life
+    - I feel overwhelmed by all the career choices
+    - I don't know what I'm good at
+    - I'm not sure what careers match my skills
+    - I need help understanding my career options
+    - I'm confused about what to do next in my career
+    - I don't know how to choose between different careers
+    - I'm lost and need career direction
+    - I'm having trouble deciding on a career path
+    - I need advice on finding the right career
+    - Can you help me figure out what career is right for me?
+
+- intent: goal_oriented
+  examples: |
+    - I want to become a [software developer](career) in the next two years
+    - My goal is to work as a [data scientist](career)
+    - I'm planning my career path to become a [UX designer](career)
+    - I need a roadmap to become a [product manager](career)
+    - I want to know the steps to become a [cybersecurity analyst](career)
+    - What do I need to do to become a [digital marketer](career)?
+    - How can I become a [financial analyst](career)?
+    - What's the path to becoming a [healthcare administrator](career)?
+    - I want a clear plan for getting into [artificial intelligence](field)
+    - What steps should I take to enter the [web development](field) field?
+    - I need a career plan for getting into [creative design](field)
+    - How do I prepare for a career in [healthcare](field)?
+    - What's the best way to start a career in [education](field)?
+    - I want to know how to build a career in [technology](field)
+    - What's the roadmap for a career in [finance](field)?
+    - How do I develop the skills for [marketing](field)?
+    - I want to set goals for my career development
+    - I need a structured approach to achieve my career objectives
+    - What milestones should I aim for in my professional development?
+    - I want to create a step-by-step plan for my career

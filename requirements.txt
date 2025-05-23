@@ -1,0 +1,12 @@
+#rasa==3.5.10
+nltk>=3.9.1
+textblob>=0.15.3
+streamlit<1.25.0
+streamlit-lottie>=0.0.5
+streamlit-option-menu>=0.3.6
+pandas>=2.0.0
+numpy
+scikit-learn
+fpdf>=1.7.2
+requests>=2.31.0
+pytest>=7.4.0
